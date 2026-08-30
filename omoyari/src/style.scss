@@ -1,0 +1,7 @@
+@use "./styles/reset" as reset;
+@use "./styles/variables" as variables;
+
+body{
+    background-color: var(--corFundo);
+    color: var(--corTexto);
+}
