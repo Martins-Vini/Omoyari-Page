@@ -1,7 +1,15 @@
 @use "./styles/reset" as reset;
 @use "./styles/variables" as variables;
+@use "./styles/navbar" as navbar;
+
 
 body{
     background-color: var(--corFundo);
     color: var(--corTexto);
+}
+
+a{
+    text-decoration:none;
+    color:white;
+
 }
