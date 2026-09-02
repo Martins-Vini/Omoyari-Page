@@ -2,7 +2,7 @@ function renderNavbar(){
     return (`
         <nav id="navbar">
             <a href="#home" class="logo">
-                <img src="./src/assets/omoyariLogo.png" id="logoEmpresa" alt="Logo da empresa">
+                <img src="/src/assets/omoyariLogo.png" id="logoEmpresa" alt="Logo da empresa">
                 <span id="nomeEmpresa">Omoyari</span>
             </a>
 

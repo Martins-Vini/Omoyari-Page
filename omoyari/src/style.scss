@@ -1,10 +1,12 @@
 @use "./styles/reset" as reset;
 @use "./styles/variables" as variables;
 @use "./styles/navbar" as navbar;
+@use "./styles/header" as header;
+@use "./styles/section3.scss" as section3;
 
 
 body{
-    background-color: var(--corFundo);
+    background-image:linear-gradient(to bottom, var(--corFundo), rgb(39, 2, 2));
     color: var(--corTexto);
 }
 

@@ -1,0 +1,106 @@
+header{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    overflow: hidden; 
+    position: relative;
+}
+
+header > section{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    width:50%;
+    margin-bottom:0px;
+}
+
+section h1{
+    font-size:3em;
+}
+
+h1 > strong.destaque{
+    background: linear-gradient(
+        90deg, 
+        #d86d5f, 
+        #f08a78,
+        #c25547,
+        #d86d5f
+    );
+    
+    background-size: 200% auto;
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    
+    animation: moverGradiente 5s linear infinite;
+    display: inline-block;
+}
+
+@keyframes moverGradiente {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: -200% center;
+    }
+}
+
+section > p{
+    text-align:justify;
+    margin:30px 20px;
+    line-height:1.8em;
+    text-indent: 25px;
+}
+
+section > div{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+}
+
+section > div > button{
+    padding:15px;
+    border-radius:10px;
+    border:none;
+    margin:10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(180deg, var(--deg1) 0%, var(--deg2) 100%);
+    color:white;
+    transition: all 0.6s ease-in-out;
+
+    &:hover{
+        background: linear-gradient(180deg, var(--deg2) 0%, var(--deg1) 100%);
+        cursor:pointer;
+    };
+};
+
+
+section > div > p{
+    margin:0px 5px;
+}
+
+section > div > a{
+    margin:10px;
+    border-radius:10px;
+    padding:15px;
+    background-image: linear-gradient(to bottom, rgb(231, 222, 222), rgb(177, 132, 132));
+    color:rgb(85, 5, 5);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &:hover{
+        text-decoration:underline;
+        cursor:pointer;
+    }
+}
+
+section > img{
+    padding:0px;
+    margin-bottom: 0px;
+    min-width: 300px;
+    will-change: transform;
+}
