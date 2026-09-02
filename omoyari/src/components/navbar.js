@@ -2,7 +2,8 @@ function renderNavbar(){
     return (`
         <nav id="navbar">
             <a href="#home" class="logo">
-                <img src="/src/assets/omoyariLogo.png" id="logoEmpresa" alt="Logo da empresa">
+                <!-- Removido o "/src" do caminho -->
+                <img src="/assets/omoyariLogo.png" id="logoEmpresa" alt="Logo da empresa">
                 <span id="nomeEmpresa">Omoyari</span>
             </a>
 
@@ -14,7 +15,7 @@ function renderNavbar(){
 
             <a href="#contact" id="contato">Fale conosco</a>
         </nav>
-        `)
+    `);
 }
 
 export {renderNavbar};

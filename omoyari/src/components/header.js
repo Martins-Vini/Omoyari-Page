@@ -11,10 +11,10 @@ function renderHeader(){
                 </div>
             </section>
             <section>
-                <img id="img-celular" src="/src/assets/img-celular.png" alt="Imagem de uma pessoa segurando um celular com tela branca">
+                <!-- Removido o "/src" do caminho -->
+                <img id="img-celular" src="/assets/img-celular.png" alt="Imagem de uma pessoa segurando um celular com tela branca">
             </section>
         </header>
-    
     `);
 }
 
