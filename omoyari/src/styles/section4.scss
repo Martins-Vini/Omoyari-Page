@@ -1,0 +1,87 @@
+section.section4 {
+    background-color: var(--corFundoSecundario);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px 80px 20px;
+}
+
+section.section4 aside h1 {
+    font-size: 2.2em;
+    margin-top: 15px;
+}
+
+section.section4 aside p {
+    margin: 15px 0 40px 0;
+    font-size: 1.1em;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 750px;
+}
+
+.card-servico {
+    position: relative;
+    background-color: #f0d5d2;
+    color: #3b0a0a;
+    padding: 30px 35px;
+    border-radius: 16px;
+    text-align: left;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.card-servico::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0px;
+    height: 100%;
+    background-color: #bd1212;
+    transition: width 0.3s ease;
+}
+
+.card-servico:hover {
+    transform: translateY(-6px) scale(1.01);
+    background-color: #f7e3e0;
+    box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card-servico:hover::before {
+    width: 8px;
+}
+
+.card-servico h2 {
+    font-size: 1.6em;
+    margin-bottom: 12px;
+    color: #2e0505;
+    font-weight: 700;
+}
+
+.card-servico p {
+    font-size: 1em;
+    line-height: 1.6em;
+    color: #4a1212;
+}
+
+@media (max-width: 768px) {
+    section.section4 {
+        padding: 20px 15px 50px 15px;
+    }
+
+    .card-servico {
+        padding: 25px 20px;
+    }
+
+    .card-servico h2 {
+        font-size: 1.35em;
+    }
+}

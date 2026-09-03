@@ -2,7 +2,11 @@
 @use "./styles/variables" as variables;
 @use "./styles/navbar" as navbar;
 @use "./styles/header" as header;
-@use "./styles/section3.scss" as section3;
+@use "./styles/section3" as section3;
+@use "./styles/section4" as section4;
+@use "./styles/section5" as section5;
+@use "./styles/section6" as section6;
+@use "./styles/footer" as footer;
 
 
 body{
@@ -14,4 +18,310 @@ a{
     text-decoration:none;
     color:white;
 
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: white;
+}
+
+.conteudo-nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+    
+    .menu-toggle {
+        display: block; 
+    }
+    
+    img#logoEmpresa {
+        width: 45px;
+    }
+
+    a.logo {
+        font-size: 1.6rem;
+    }
+
+    .conteudo-nav {
+        display: none; 
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .conteudo-nav.ativo {
+        display: flex;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+    
+    header > section:nth-child(1) {
+        width: 100%;
+    }
+    
+    header > section:nth-child(2) {
+        display: none;
+    }
+    
+    section > aside#missao-visao-valores {
+        flex-direction: column;
+    }
+    
+    section > aside#missao-visao-valores > div.card-item {
+        max-width: 100%;
+        width: 100%;
+        margin: 50px 0 20px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+    
+    .menu-toggle {
+        display: block; 
+    }
+    
+    img#logoEmpresa {
+        width: 45px;
+    }
+
+    a.logo {
+        font-size: 1.6rem;
+    }
+
+    .conteudo-nav {
+        display: none; 
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .conteudo-nav.ativo {
+        display: flex;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+    
+    header > section:nth-child(1) {
+        width: 100%;
+    }
+    
+    header > section:nth-child(2) {
+        display: none;
+    }
+
+    section h1 {
+        font-size: 2.2em;
+        line-height: 1.2;
+    }
+
+    section > p {
+        text-align: center;
+        text-indent: 0;
+        margin: 20px 0;
+    }
+
+    section > div {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    section > div > button, 
+    section > div > a {
+        width: 100%;
+        max-width: 320px;
+        margin: 0;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    section > div > p {
+        margin: 5px 0;
+    }
+
+    section.section3 {
+        padding: 40px 20px;
+    }
+
+    section > aside {
+        padding: 0;
+        width: 100%;
+    }
+
+    section > aside > h1 {
+        font-size: 1.8em;
+    }
+
+    section > aside > p {
+        margin: 15px 0;
+    }
+    
+    section > aside#missao-visao-valores {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    
+    section > aside#missao-visao-valores > div.card-item {
+        max-width: 100%;
+        width: 100%;
+        margin: 40px 0 20px 0;
+    }
+
+    section.section4 {
+        padding: 40px 20px;
+    }
+
+    section.section4 aside h1 {
+        font-size: 1.8em;
+    }
+
+    .card-servico {
+        padding: 25px 20px;
+    }
+
+    .card-servico h2 {
+        font-size: 1.35em;
+    }
+
+    section.section5 {
+        padding: 40px 20px;
+    }
+
+    section.section5 h1 {
+        font-size: 1.8em;
+        text-align: center;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+
+    .timeline-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px;
+        gap: 40px;
+        width: 100%;
+    }
+
+    .timeline-line {
+        width: 3px;
+        height: 100%;
+        left: 26px;
+        top: 0;
+        transform: none;
+    }
+
+    .timeline-item {
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .marker {
+        margin-right: 30px;
+    }
+
+    .content {
+        position: relative;
+        top: 0 !important;
+        bottom: 0 !important;
+        width: auto;
+        text-align: left;
+        transform: none !important;
+    }
+
+    .timeline-item.bottom:hover .content,
+    .timeline-item.top:hover .content {
+        transform: translateX(10px) !important;
+    }
+
+    section.section6 {
+        padding: 40px 20px;
+    }
+
+    .titulos-secao h2 {
+        font-size: 1.8rem;
+    }
+
+    .projeto-conteudo {
+        flex-direction: column-reverse;
+        padding: 40px 25px;
+        text-align: center;
+    }
+    
+    .texto-projeto {
+        text-align: center;
+    }
+
+    .texto-projeto h3 {
+        font-size: 2.2rem;
+    }
+    
+    .imagem-projeto img {
+        max-height: 200px;
+    }
+
+    footer {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 40px;
+        text-align: center;
+        overflow-x: hidden;
+    }
+
+    footer > * {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    footer form, 
+    footer .formulario {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    footer input,
+    footer textarea,
+    footer button {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
 }
