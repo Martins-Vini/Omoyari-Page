@@ -1,6 +1,6 @@
 function renderFooter(){
     return(`
-        <footer>
+        <footer id="contact">
             <aside>
                 <hr>
                 <h1>Tem um desafio? Vamos transformá-lo em <strong class="destaque">solução.</strong></h1>

@@ -1,6 +1,6 @@
 function renderSection3(){
     return (`
-        <section class="section3">
+        <section class="section3" id="about">
             <aside>
                 <hr>
                 <h1>Tecnologia com propósito.</h1>
