@@ -17,7 +17,7 @@ function renderSection6() {
                         <h3>CIVVO</h3>
                         <h4>Gestão que potencializa o impacto social.</h4>
                         <p>Uma solução web desenvolvida para auxiliar organizações sociais na gestão de recursos, projetos, voluntários e informações.</p>
-                        <a href="#" class="btn-visitar">Visitar</a>
+                        <a href="https://civvoprojeto.vercel.app" class="btn-visitar" target="_blank">Visitar</a>
                     </div>
                     <div class="imagem-projeto">
                         <img src="/assets/civvo_logo.png" alt="Logo CIVVO">

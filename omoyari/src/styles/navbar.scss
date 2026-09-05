@@ -3,6 +3,11 @@
   justify-content: space-between;
   align-items: center; 
   padding: 1rem 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--corFundo);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links {

@@ -5,9 +5,9 @@ function renderHeader(){
                 <h1>Tecnologia para quem <br><strong class="destaque">transforma</strong> o mundo</h1>
                 <p>A Omoyari desenvolve soluções digitais para fortalecer organizações sociais, melhorar sua gestão e ampliar seu impacto.</p>
                 <div>
-                    <button>Conheça a Omoyari</button>
+                    <a href="#about"><button>Conheça a Omoyari</button></a>
                     <p>OU</p>
-                    <a href="#contato">Entre em contato</a>
+                    <a id="contact-link" href="#contact">Entre em contato</a>
                 </div>
             </section>
             <section>

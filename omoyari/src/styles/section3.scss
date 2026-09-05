@@ -24,9 +24,10 @@ section > aside > p {
 section > aside#missao-visao-valores {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    gap:10%;
     width: 100%;
 }
 

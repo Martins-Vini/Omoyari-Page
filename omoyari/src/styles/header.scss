@@ -63,7 +63,7 @@ section > div{
     justify-content:center;
 }
 
-section > div > button{
+section > div > a > button{
     padding:15px;
     border-radius:10px;
     border:none;
@@ -84,7 +84,7 @@ section > div > p{
     margin:0px 5px;
 }
 
-section > div > a{
+section > div > a#contact-link{
     margin:10px;
     border-radius:10px;
     padding:15px;
