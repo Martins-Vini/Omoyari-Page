@@ -9,7 +9,7 @@ function renderFooter(){
             </aside>
             <aside id="formulario">
                 <h1>Envie seu recado para nós.</h1>
-                <form action="https://formspree.io/f/xeaqznnj" method="POST">
+                <form action="https://formspree.io/f/xaenkvdg" method="POST">
                         <label>Insira seu e-mail:</label>
                         <input id="email" name="email" type="email" placeholder="Seu e-mail" />
                         <label>Insira sua mensagem:</label>
