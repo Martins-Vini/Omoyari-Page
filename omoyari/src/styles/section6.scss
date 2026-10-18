@@ -4,6 +4,7 @@ section.section6 {
     align-items: center;
     padding: 80px 20px;
     text-align: center;
+    background-color: #171717;
 }
 
 .titulos-secao {
@@ -14,10 +15,12 @@ section.section6 {
 }
 
 .titulos-secao .subtitulo {
-    font-size: 1.1rem;
-    color: #f08a78;
-    margin-bottom: 8px;
-    font-weight: 500;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #B3262E;
+    margin-bottom: 15px;
 }
 
 .titulos-secao h2 {
@@ -28,14 +31,14 @@ section.section6 {
 .projeto-destaque {
     position: relative;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1500px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(0,0,0,0.4);
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 420px;
+    min-height: 600px;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -60,7 +63,7 @@ section.section6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(74, 18, 18, 0.9) 0%, rgba(138, 28, 28, 0.75) 100%);
+    background: linear-gradient(135deg, rgba(57, 63, 68, 0.9) 0%, rgba(34, 46, 51, 0.75) 100%);
     z-index: 1;
 }
 
@@ -94,31 +97,31 @@ section.section6 {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #f7d5d0;
+    color: #d0e9f7;
 }
 
 .texto-projeto p {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 35px;
-    color: #f2e3e3;
+    color: #e3f0f2;
 }
 
 .btn-visitar {
     display: inline-block;
-    background-color: #de3206;
+    background-color: #2563A6;
     color: white;
     padding: 14px 35px;
     border-radius: 10px;
     font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(222, 50, 6, 0.4);
+    box-shadow: 0 4px 15px rgba(12, 97, 158, 0.4);
 }
 
 .btn-visitar:hover {
-    background-color: #f0481c;
+    background-color: #1D4E89;
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(222, 50, 6, 0.6);
+    box-shadow: 0 8px 20px rgba(5, 77, 128, 0.6);
 }
 
 .imagem-projeto {

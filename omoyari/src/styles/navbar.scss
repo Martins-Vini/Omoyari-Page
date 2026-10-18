@@ -1,53 +1,159 @@
+/* ==========================================================================
+   NAVBAR & BARRA DE NAVEGAÇÃO
+   ========================================================================== */
+
 #navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; 
-  padding: 1rem 3rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background-color: var(--corFundo);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 1rem 3rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #F7F3ED;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.06);
+
+    a.logo {
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+
+        span#nomeEmpresa {
+            font-weight: 700;
+            color: #000000; /* Logo preta */
+        }
+
+        img#logoEmpresa {
+            width: 32px;
+            height: auto;
+        }
+    }
+
+    .conteudo-nav {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        gap: 2.5rem; 
+        margin: 0;
+        padding: 0;
+
+        li > a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-weight: 500;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: #B3262E;
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  list-style: none;
-  gap: 2.5rem; 
-  margin: 0;
-  padding: 0;
+/* Botão do Navbar: "Fale conosco" */
+.btn-navbar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    white-space: nowrap;
+    background-color: #B3262E;
+    color: #ffffff;
+    box-shadow: 0px 3px 10px rgba(179, 38, 46, 0.25);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.25s ease;
+
+    &:hover {
+        background-color: #981e25;
+        transform: translateY(-2px);
+        box-shadow: 0px 6px 18px rgba(179, 38, 46, 0.4);
+    }
+
+    &:active {
+        transform: scale(0.97) translateY(0);
+    }
 }
 
-.nav-links li > a:hover{
-    text-decoration:underline;
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #1a1a1a;
 }
 
-a.logo{
-    font-size: 1.2rem;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-}
+/* ==========================================================================
+   RESPONSIVIDADE MOBILE (MENU HAMBÚRGUER)
+   ========================================================================== */
+@media (max-width: 768px) {
+    #navbar {
+        padding: 1rem 1.5rem;
+    }
 
-a.logo span#nomeEmpresa{
-    font-weight: 700;
-}
+    .menu-toggle {
+        display: block;
+    }
 
-img#logoEmpresa{
-    width: 10%;
-}
+    /* Menu recolhido perfeitamente sem margens sobrando */
+    .conteudo-nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #F7F3ED;
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        box-shadow: none;
+        transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                    padding 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                    box-shadow 0.35s ease;
 
-a#contato{
-    padding:5px;
-    background-color:var(--fundoBotao);
-    box-shadow:0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius:13px;
-    transition: all 0.3s ease;
+        /* Estado ativo (aberto pelo clique) */
+        &.ativo {
+            max-height: 320px;
+            padding: 24px 20px;
+            box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.1);
+        }
+    }
 
-    &:hover{
-        padding:8px;
+    .nav-links {
+        flex-direction: column;
+        gap: 1.2rem;
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+
+        li > a {
+            font-size: 1.1rem;
+            display: block;
+            padding: 4px 0;
+        }
+    }
+
+    .btn-navbar {
+        width: 100%;
+        max-width: 100%;
     }
 }

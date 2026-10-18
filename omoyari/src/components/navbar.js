@@ -12,14 +12,14 @@ function renderNavbar(){
 
             <div id="menu-mobile-conteudo" class="conteudo-nav">
                 <ul class="nav-links">
-                    <li><a href="#home" id="inicio">Início</a></li>
-                    <li><a href="#services" id="servicos">Serviços</a></li>
-                    <li><a href="#about" id="sobre-nos">Sobre nós</a></li>
+                    <li><a href="#home" id="inicio" onclick="document.getElementById('menu-mobile-conteudo').classList.remove('ativo')">Início</a></li>
+                    <li><a href="#services" id="servicos" onclick="document.getElementById('menu-mobile-conteudo').classList.remove('ativo')">Serviços</a></li>
+                    <li><a href="#about" id="sobre-nos" onclick="document.getElementById('menu-mobile-conteudo').classList.remove('ativo')">Sobre nós</a></li>
                 </ul>   
-                <a href="#contact" id="contato">Fale conosco</a>
+                <a href="#contact" id="contato" class="btn btn-navbar" onclick="document.getElementById('menu-mobile-conteudo').classList.remove('ativo')">Fale conosco</a>
             </div>
         </nav>
     `);
 }
 
-export {renderNavbar};
+export { renderNavbar };

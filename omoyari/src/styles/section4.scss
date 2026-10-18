@@ -1,87 +1,155 @@
 section.section4 {
-    background-color: var(--corFundoSecundario);
+    background-color: #E7E7E7;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 40px 20px 80px 20px;
-}
+    padding: 60px 20px 80px 20px;
 
-section.section4 aside h1 {
-    font-size: 2.2em;
-    margin-top: 15px;
-}
+    hr.linha-titulo {
+        border: none;
+        height: 4px;
+        background-color: #a73535;
+        width: 60px;
+        margin: 0 auto 24px auto;
+    }
 
-section.section4 aside p {
-    margin: 15px 0 40px 0;
-    font-size: 1.1em;
-}
+    aside {
+        h1 {
+            font-size: 2.2em;
+            margin-top: 15px;
+            color: rgb(26, 23, 23);
+            font-weight: 700;
+        }
 
-.cards-container {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    width: 100%;
-    max-width: 750px;
-}
+        p {
+            margin: 15px 0 50px 0;
+            font-size: 1.1em;
+            color: rgb(26, 23, 23);
+        }
+    }
 
-.card-servico {
-    position: relative;
-    background-color: #f0d5d2;
-    color: #3b0a0a;
-    padding: 30px 35px;
-    border-radius: 16px;
-    text-align: left;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, background-color 0.3s ease;
-    overflow: hidden;
-}
-
-.card-servico::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0px;
-    height: 100%;
-    background-color: #bd1212;
-    transition: width 0.3s ease;
-}
-
-.card-servico:hover {
-    transform: translateY(-6px) scale(1.01);
-    background-color: #f7e3e0;
-    box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.25);
-}
-
-.card-servico:hover::before {
-    width: 8px;
-}
-
-.card-servico h2 {
-    font-size: 1.6em;
-    margin-bottom: 12px;
-    color: #2e0505;
-    font-weight: 700;
-}
-
-.card-servico p {
-    font-size: 1em;
-    line-height: 1.6em;
-    color: #4a1212;
-}
-
-@media (max-width: 768px) {
-    section.section4 {
-        padding: 20px 15px 50px 15px;
+    .cards-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-end; /* Alinha os cards pela base */
+        gap: 24px;
+        width: 100%;
+        max-width: 1100px;
     }
 
     .card-servico {
-        padding: 25px 20px;
+        flex: 1;
+        position: relative;
+        background-color: #ffffff;
+        color: #141212;
+        border-radius: 16px;
+        text-align: left;
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+        overflow: hidden;
+
+        /* Borda lateral vermelha no hover */
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0px;
+            height: 100%;
+            background-color: #a73535;
+            transition: width 0.3s ease;
+        }
+
+        /* Ícone / Desenho decorativo no canto inferior de cada card */
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 16px;
+            right: 18px;
+            width: 28px;
+            height: 28px;
+            opacity: 0.15;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Alturas equilibradas da escadinha */
+        &#c1 {
+            padding: 28px 24px 50px 24px;
+            min-height: 200px;
+
+            /* Ícone de Código / Soluções */
+            &::after {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a73535'%3E%3Cpath d='M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z'/%3E%3C/svg%3E");
+            }
+        }
+
+        &#c2 {
+            padding: 32px 28px 55px 28px;
+            min-height: 235px;
+
+            /* Ícone de Design / Experiência (Varinha de Condão / Estrela) */
+            &::after {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a73535'%3E%3Cpath d='M12 2l2.4 5 5.6.8-4 4 1 5.6-5-2.6-5 2.6 1-5.6-4-4 5.6-.8z'/%3E%3C/svg%3E");
+            }
+        }
+
+        &#c3 {
+            padding: 36px 30px 60px 30px;
+            min-height: 270px;
+
+            /* Ícone de Tecnologia / Chip */
+            &::after {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a73535'%3E%3Cpath d='M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm3 5a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm6 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-6 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm6 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z'/%3E%3C/svg%3E");
+            }
+        }
+
+        &:hover {
+            transform: translateY(-6px);
+            background-color: #ffffff;
+            box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.12);
+
+            &::before {
+                width: 8px;
+            }
+
+            /* Destaca o ícone decorativo ao passar o mouse */
+            &::after {
+                opacity: 0.8;
+                transform: scale(1.1);
+            }
+        }
+
+        h2 {
+            font-size: 1.4em;
+            margin-bottom: 14px;
+            color: #110e0e;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 0.95em;
+            line-height: 1.6em;
+            color: #4a4a4a;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    section.section4 .cards-container {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .card-servico h2 {
-        font-size: 1.35em;
+    section.section4 .card-servico {
+        width: 100%;
+        max-width: 600px;
+        min-height: auto !important;
+        padding: 35px 30px !important;
     }
 }

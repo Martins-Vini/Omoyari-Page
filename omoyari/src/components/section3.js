@@ -1,8 +1,8 @@
 function renderSection3(){
     return (`
         <section class="section3" id="about">
-            <aside>
-                <hr>
+            <aside class="intro-content">
+                <hr class="linha-titulo">
                 <h1>Tecnologia com propósito.</h1>
                 <p>A Omoyari é uma empresa de tecnologia<br> focada no desenvolvimento de soluções digitais que aproximam inovação e impacto social.</p>
             </aside>

@@ -4,7 +4,7 @@ section.section5 {
     align-items: center;
     justify-content: center;
     padding: 60px 20px;
-    background-color: transparent;
+    background-color: #F5DFE1;
 }
 
 section.section5 > hr {
@@ -20,10 +20,11 @@ section.section5 h1 {
     text-align: left;
     width: 80%;
     max-width: 900px;
+    color: rgb(15, 14, 14);
 }
 
 section.section5 h1 .destaque-texto {
-    color: #f08a78;
+    color: #b31c1c;
     font-weight: 700;
 }
 
@@ -43,7 +44,7 @@ section.section5 h1 .destaque-texto {
     left: 0;
     width: 100%;
     height: 3px;
-    background-color: #d8cdcd;
+    background-color: #8e3535;
     transform: translateY(-50%);
     z-index: 1;
 }
@@ -78,17 +79,21 @@ section.section5 h1 .destaque-texto {
 .marker {
     width: 14px;
     height: 14px;
-    background-color: #de3206;
+    background-color: #a21c1c;
     border-radius: 3px;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
 
 .content {
+    color: rgb(32, 28, 28);
     position: absolute;
     width: 220px;
     text-align: center;
     opacity: 0.85;
     transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .timeline-item.bottom .content {
@@ -110,6 +115,16 @@ section.section5 h1 .destaque-texto {
     line-height: 1.4em;
 }
 
+/* Estado inicial do Emoji (escondido) */
+.timeline-emoji {
+    font-size: 1.6em;
+    opacity: 0;
+    transform: scale(0.5);
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
 .timeline-item:hover .marker {
     transform: scale(1.6) rotate(45deg);
     box-shadow: 0 0 15px rgba(222, 50, 6, 0.6);
@@ -127,49 +142,83 @@ section.section5 h1 .destaque-texto {
     transform: translateY(-8px);
 }
 
+/* Animação do Emoji no Hover */
+.timeline-item:hover .timeline-emoji {
+    opacity: 1;
+    transform: scale(1);
+    max-height: 50px;
+}
+
+.timeline-item.bottom:hover .timeline-emoji {
+    margin-top: 10px;
+}
+
+.timeline-item.top:hover .timeline-emoji {
+    margin-bottom: 10px;
+    order: -1; /* Garante que fique acima do título nos itens top */
+}
+
 @media (max-width: 768px) {
     section.section5 h1 {
         font-size: 1.8em;
         text-align: center;
         margin-bottom: 40px;
+        width: 100%;
     }
 
     .timeline-wrapper {
         flex-direction: column;
         align-items: flex-start;
-        padding-left: 20px;
-        gap: 40px;
+        padding-left: 10px;
+        gap: 35px;
+        width: 100%;
     }
 
     .timeline-line {
         width: 3px;
         height: 100%;
-        left: 26px;
+        left: 16px; /* Posiciona a linha perfeitamente no mobile */
         top: 0;
         transform: none;
     }
 
     .timeline-item {
         width: 100%;
-        flex-direction: row;
+        display: flex;
+        flex-direction: row !important; /* Garante que todos fiquem lado a lado (marcador + texto) */
+        align-items: flex-start;
         justify-content: flex-start;
     }
 
+    /* Padroniza a ordem para todos: o marcador vem primeiro, o conteúdo depois */
     .marker {
-        margin-right: 30px;
+        order: 1;
+        margin-right: 20px;
+        margin-top: 4px; /* Alinha o marcador com a primeira linha do título */
+        flex-shrink: 0;
     }
 
     .content {
-        position: relative;
-        top: 0 !important;
-        bottom: 0 !important;
-        width: auto;
-        text-align: left;
+        order: 2;
+        position: relative !important;
+        top: unset !important;
+        bottom: unset !important;
+        width: calc(100% - 40px) !important;
+        text-align: left !important;
+        align-items: flex-start !important;
         transform: none !important;
     }
 
+    /* Remove deslocamentos bruscos no hover em telas pequenas */
+    .timeline-item:hover .content,
     .timeline-item.bottom:hover .content,
     .timeline-item.top:hover .content {
-        transform: translateX(10px) !important;
+        transform: none !important;
+    }
+
+    .timeline-item:hover .timeline-emoji {
+        margin-top: 6px !important;
+        margin-bottom: 0 !important;
+        order: 3;
     }
 }
