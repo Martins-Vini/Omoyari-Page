@@ -1,0 +1,177 @@
+/* ==========================================================================
+   SEÇÃO 8 - CARROSSEL DE FUNDADORES
+   ========================================================================== */
+
+section.section8 {
+    background-color: #171717;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+    overflow: hidden;
+
+    aside.intro-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 800px;
+        margin-bottom: 50px;
+        padding: 0 20px;
+
+        hr.linha-titulo {
+            border: none;
+            height: 4px;
+            background-color: #E98E96;
+            width: 60px;
+            margin: 0 auto 20px auto;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: 1.1em;
+            color: #b5b5b5;
+        }
+    }
+
+    .carrossel-wrapper {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: #212121;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+
+            &:hover {
+                background-color: #E98E96;
+                color: #171717;
+                box-shadow: 0px 4px 16px rgba(233, 142, 150, 0.4);
+            }
+
+            &.prev-btn { left: 20px; }
+            &.next-btn { right: 20px; }
+        }
+
+        .carrossel-track-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 40px 0;
+        }
+
+        .carrossel-track {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
+
+        .card-fundador {
+            flex: 0 0 280px;
+            background-color: #212121;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 18px;
+            padding: 35px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0.5;
+            transform: scale(0.85);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+            .avatar-container {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background-color: rgba(233, 142, 150, 0.1);
+                color: #E98E96;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2.2em;
+                margin-bottom: 20px;
+                transition: all 0.3s ease;
+            }
+
+            h2 {
+                font-size: 1.25em;
+                color: #ffffff;
+                font-weight: 700;
+                margin: 0 0 6px 0;
+            }
+
+            .cargo-fundador {
+                font-size: 0.88em;
+                color: #E98E96;
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+
+            .redes-sociais {
+                display: flex;
+                gap: 12px;
+
+                a {
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                    background-color: #2b2b2b;
+                    color: #ffffff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.1em;
+                    text-decoration: none;
+                    transition: all 0.25s ease;
+
+                    &:hover {
+                        background-color: #E98E96;
+                        color: #171717;
+                        transform: translateY(-3px);
+                    }
+                }
+            }
+
+            /* Card Central em Destaque */
+            &.active {
+                opacity: 1;
+                transform: scale(1.1);
+                background-color: #262626;
+                border-color: rgba(233, 142, 150, 0.4);
+                box-shadow: 0px 16px 36px rgba(0, 0, 0, 0.4),
+                            0px 0px 20px rgba(233, 142, 150, 0.15);
+
+                .avatar-container {
+                    background-color: #E98E96;
+                    color: #171717;
+                }
+            }
+        }
+    }
+}

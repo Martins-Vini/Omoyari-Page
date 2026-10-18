@@ -1,0 +1,138 @@
+/* ==========================================================================
+   SEÇÃO 7 - DEPOIMENTOS
+   ========================================================================== */
+
+section.section7 {
+    background-color: #E7E7E7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+
+    aside.intro-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 800px;
+        margin-bottom: 50px;
+
+        hr.linha-titulo {
+            border: none;
+            height: 4px;
+            background-color: #a73535;
+            width: 60px;
+            margin: 0 auto 20px auto;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #141212;
+            font-weight: 700;
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: 1.1em;
+            color: #4a4a4a;
+        }
+    }
+
+    .depoimentos-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        gap: 24px;
+        width: 100%;
+        max-width: 1100px;
+
+        .card-depoimento {
+            position: relative;
+            flex: 1;
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 40px 30px 30px 30px;
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.35s ease;
+            border: 1px solid transparent;
+
+            &:hover {
+                transform: translateY(-8px);
+                box-shadow: 0px 16px 32px rgba(167, 53, 53, 0.12);
+                border-color: rgba(167, 53, 53, 0.2);
+
+                .aspas-quote {
+                    color: #a73535;
+                    transform: scale(1.1);
+                }
+            }
+
+            .aspas-quote {
+                font-size: 4em;
+                line-height: 0.5em;
+                color: #e0e0e0;
+                font-family: Georgia, serif;
+                transition: color 0.3s ease, transform 0.3s ease;
+                margin-bottom: 10px;
+            }
+
+            .texto-depoimento {
+                font-size: 0.98em;
+                line-height: 1.6em;
+                color: #333333;
+                font-style: italic;
+                margin-bottom: 30px;
+            }
+
+            .autor-info {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                .autor-avatar {
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    background-color: rgba(167, 53, 53, 0.1);
+                    color: #a73535;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.4em;
+                    flex-shrink: 0;
+                }
+
+                h3 {
+                    font-size: 1.05em;
+                    font-weight: 700;
+                    color: #110e0e;
+                    margin: 0;
+                }
+
+                span {
+                    font-size: 0.85em;
+                    color: #666666;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    section.section7 .depoimentos-container {
+        flex-direction: column;
+        align-items: center;
+
+        .card-depoimento {
+            width: 100%;
+            max-width: 600px;
+        }
+    }
+}
