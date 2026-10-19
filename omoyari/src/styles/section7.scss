@@ -1,134 +1,170 @@
-/* ==========================================================================
-   SEÇÃO 7 - DEPOIMENTOS
-   ========================================================================== */
-
-section.section7 {
-    background-color: #E7E7E7;
+section.section-depoimentos {
+    position: relative;
+    /* Substitua a URL abaixo pela imagem de ação social desejada */
+    background-image: url("https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=1600&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito Parallax */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 80px 20px;
+    text-align: center;
+    padding: 80px 20px 100px 20px;
+    overflow: hidden;
 
-    aside.intro-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        max-width: 800px;
-        margin-bottom: 50px;
+    /* Camada escura translúcida para garantir contraste perfeito com o fundo */
+    .overlay-parallax {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(15, 15, 15, 0.75);
+        z-index: 1;
+    }
 
-        hr.linha-titulo {
-            border: none;
-            height: 4px;
-            background-color: #a73535;
-            width: 60px;
-            margin: 0 auto 20px auto;
-        }
+    /* Garante que o conteúdo fique acima da camada de overlay */
+    aside, .cards-container {
+        position: relative;
+        z-index: 2;
+    }
 
+    hr.linha-titulo {
+        border: none;
+        height: 4px;
+        background-color: #a73535;
+        width: 60px;
+        margin: 0 auto 24px auto;
+    }
+
+    aside {
         h1 {
-            font-size: 2.2em;
-            color: #141212;
+            font-size: 2.4em;
+            margin-top: 15px;
+            color: #ffffff;
             font-weight: 700;
         }
 
         p {
-            margin-top: 15px;
+            margin: 15px 0 50px 0;
             font-size: 1.1em;
-            color: #4a4a4a;
+            color: #e0e0e0;
+            max-z: 700px;
         }
     }
 
-    .depoimentos-container {
+    .cards-container {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: stretch;
         gap: 24px;
         width: 100%;
-        max-width: 1100px;
+        max-width: 1150px;
+    }
 
-        .card-depoimento {
-            position: relative;
-            flex: 1;
-            background-color: #ffffff;
-            border-radius: 16px;
-            padding: 40px 30px 30px 30px;
-            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+    .card-depoimento {
+        flex: 1;
+        position: relative;
+        background-color: #ffffff;
+        color: #141212;
+        border-radius: 16px;
+        text-align: left;
+        padding: 35px 28px;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        /* Borda lateral vermelha no hover */
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0px;
+            height: 100%;
+            background-color: #a73535;
+            transition: width 0.3s ease;
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+        }
+
+        .aspas {
+            font-size: 3.5em;
+            color: #a73535;
+            line-height: 0.5;
+            font-family: serif;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        p {
+            font-size: 0.95em;
+            line-height: 1.6em;
+            color: #4a4a4a;
+            margin-bottom: 25px;
+        }
+
+        .autor-info {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                        border-color 0.35s ease;
-            border: 1px solid transparent;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid #eaeaea;
+            padding-top: 15px;
 
-            &:hover {
-                transform: translateY(-8px);
-                box-shadow: 0px 16px 32px rgba(167, 53, 53, 0.12);
-                border-color: rgba(167, 53, 53, 0.2);
-
-                .aspas-quote {
-                    color: #a73535;
-                    transform: scale(1.1);
-                }
-            }
-
-            .aspas-quote {
-                font-size: 4em;
-                line-height: 0.5em;
-                color: #e0e0e0;
-                font-family: Georgia, serif;
-                transition: color 0.3s ease, transform 0.3s ease;
-                margin-bottom: 10px;
-            }
-
-            .texto-depoimento {
-                font-size: 0.98em;
-                line-height: 1.6em;
-                color: #333333;
-                font-style: italic;
-                margin-bottom: 30px;
-            }
-
-            .autor-info {
+            .avatar-placeholder {
+                width: 40px;
+                height: 40px;
+                background-color: #f7d7d7;
+                border-radius: 50%;
                 display: flex;
                 align-items: center;
-                gap: 16px;
+                justify-content: center;
+                flex-shrink: 0;
 
-                .autor-avatar {
-                    width: 48px;
-                    height: 48px;
-                    border-radius: 50%;
-                    background-color: rgba(167, 53, 53, 0.1);
-                    color: #a73535;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 1.4em;
-                    flex-shrink: 0;
+                svg {
+                    width: 22px;
+                    height: 22px;
                 }
+            }
 
-                h3 {
-                    font-size: 1.05em;
-                    font-weight: 700;
-                    color: #110e0e;
-                    margin: 0;
-                }
+            h3 {
+                font-size: 0.95em;
+                color: #110e0e;
+                font-weight: 700;
+                margin: 0;
+            }
 
-                span {
-                    font-size: 0.85em;
-                    color: #666666;
-                }
+            span {
+                font-size: 0.8em;
+                color: #666666;
+                display: block;
+                margin-top: 2px;
+            }
+        }
+
+        &:hover {
+            transform: translateY(-6px);
+            box-shadow: 0px 18px 35px rgba(0, 0, 0, 0.3);
+
+            &::before {
+                width: 8px;
             }
         }
     }
 }
 
 @media (max-width: 900px) {
-    section.section7 .depoimentos-container {
-        flex-direction: column;
-        align-items: center;
+    section.section-depoimentos {
+        background-attachment: scroll; /* Desativa o fixed em mobile por limitações de performance do browser */
+        
+        .cards-container {
+            flex-direction: column;
+            align-items: center;
+        }
 
         .card-depoimento {
             width: 100%;

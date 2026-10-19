@@ -3,15 +3,33 @@ section.section5 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 60px 20px;
-    background-color: #F5DFE1;
+    padding: 80px 20px;
+    /* Degradê sofisticado e moderno em substituição ao tom liso #F5DFE1 */
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8ECEE 50%, #F3E1E4 100%);
+    position: relative;
+    overflow: hidden;
+
+    /* Brilho radial muito sutil no fundo para adicionar profundidade visual */
+    &::before {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(167, 53, 53, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+        top: -150px;
+        right: -150px;
+        pointer-events: none;
+        z-index: 0;
+    }
 }
 
 section.section5 > hr {
     width: 80%;
     margin: 40px auto;
     border: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(167, 53, 53, 0.15);
+    position: relative;
+    z-index: 2;
 }
 
 section.section5 h1 {
@@ -21,6 +39,8 @@ section.section5 h1 {
     width: 80%;
     max-width: 900px;
     color: rgb(15, 14, 14);
+    position: relative;
+    z-index: 2;
 }
 
 section.section5 h1 .destaque-texto {
@@ -36,6 +56,7 @@ section.section5 h1 .destaque-texto {
     width: 80%;
     max-width: 900px;
     min-height: 250px;
+    z-index: 2;
 }
 
 .timeline-line {
@@ -169,56 +190,5 @@ section.section5 h1 .destaque-texto {
     .timeline-wrapper {
         flex-direction: column;
         align-items: flex-start;
-        padding-left: 10px;
-        gap: 35px;
-        width: 100%;
-    }
-
-    .timeline-line {
-        width: 3px;
-        height: 100%;
-        left: 16px; /* Posiciona a linha perfeitamente no mobile */
-        top: 0;
-        transform: none;
-    }
-
-    .timeline-item {
-        width: 100%;
-        display: flex;
-        flex-direction: row !important; /* Garante que todos fiquem lado a lado (marcador + texto) */
-        align-items: flex-start;
-        justify-content: flex-start;
-    }
-
-    /* Padroniza a ordem para todos: o marcador vem primeiro, o conteúdo depois */
-    .marker {
-        order: 1;
-        margin-right: 20px;
-        margin-top: 4px; /* Alinha o marcador com a primeira linha do título */
-        flex-shrink: 0;
-    }
-
-    .content {
-        order: 2;
-        position: relative !important;
-        top: unset !important;
-        bottom: unset !important;
-        width: calc(100% - 40px) !important;
-        text-align: left !important;
-        align-items: flex-start !important;
-        transform: none !important;
-    }
-
-    /* Remove deslocamentos bruscos no hover em telas pequenas */
-    .timeline-item:hover .content,
-    .timeline-item.bottom:hover .content,
-    .timeline-item.top:hover .content {
-        transform: none !important;
-    }
-
-    .timeline-item:hover .timeline-emoji {
-        margin-top: 6px !important;
-        margin-bottom: 0 !important;
-        order: 3;
     }
 }
